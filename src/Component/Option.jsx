@@ -26,8 +26,8 @@ function Option({ question, answer, dispatch }) {
 
 Option.propTypes = {
   question: PropTypes.object.isRequired,
-  answer: PropTypes.object.isRequired,
-  dispatch: PropTypes.object.isRequired,
+  answer: PropTypes.number.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default Option;

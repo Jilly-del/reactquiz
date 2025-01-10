@@ -13,7 +13,7 @@ function Question({ question, answer, dispatch }) {
 Question.propTypes = {
   question: PropTypes.object.isRequired,
   answer: PropTypes.object.isRequired,
-  dispatch: PropTypes.Function.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default Question;
