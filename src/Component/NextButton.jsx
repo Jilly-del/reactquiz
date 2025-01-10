@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function NextButton({ answer, dispatch }) {
   if (answer === null) return;
   return (
@@ -11,5 +13,10 @@ function NextButton({ answer, dispatch }) {
     </div>
   );
 }
+
+NextButton.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  answer: PropTypes.oneOfType([PropTypes.oneOf([null]), PropTypes.number]),
+};
 
 export default NextButton;

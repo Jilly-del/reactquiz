@@ -7,6 +7,7 @@ import StartScreen from "./Component/startScreen";
 import Error from "./Component/Error";
 import Question from "./Component/Question";
 import NextButton from "./Component/NextButton";
+import Progress from "./Component/Progress";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -85,6 +86,7 @@ export default function App() {
         )}
         {statuz === "active" && (
           <>
+            <Progress index={index} numQuestion={numQuestion} />
             <Question
               question={questions[index]}
               answer={answer}

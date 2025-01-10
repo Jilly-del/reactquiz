@@ -26,7 +26,7 @@ function Option({ question, answer, dispatch }) {
 
 Option.propTypes = {
   question: PropTypes.object.isRequired,
-  answer: PropTypes.number.isRequired,
+  answer: PropTypes.oneOfType([PropTypes.oneOf([null]), PropTypes.number]),
   dispatch: PropTypes.func.isRequired,
 };
 
