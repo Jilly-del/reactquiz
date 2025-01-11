@@ -45,6 +45,11 @@ function reducer(state, action) {
         index: state.index++,
         answer: null,
       };
+    case "finish":
+      return {
+        ...state,
+        statuz: "finished",
+      };
     default:
       throw new Error("Action unknown");
   }
@@ -102,7 +107,12 @@ export default function App() {
               answer={answer}
               dispatch={dispatch}
             />
-            <NextButton dispatch={dispatch} answer={answer} />{" "}
+            <NextButton
+              dispatch={dispatch}
+              answer={answer}
+              index={index}
+              numQuestions={numQuestion}
+            />
           </>
         )}
         {statuz === "finished" && (
