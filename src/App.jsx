@@ -8,6 +8,7 @@ import Error from "./Component/Error";
 import Question from "./Component/Question";
 import NextButton from "./Component/NextButton";
 import Progress from "./Component/Progress";
+import FinishedScreen from "./Component/FinishedScreen";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -103,6 +104,12 @@ export default function App() {
             />
             <NextButton dispatch={dispatch} answer={answer} />{" "}
           </>
+        )}
+        {statuz === "finished" && (
+          <FinishedScreen
+            points={points}
+            maxPossiblePoints={maxPossiblePoints}
+          />
         )}
       </Main>
     </div>
