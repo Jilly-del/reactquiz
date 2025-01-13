@@ -9,6 +9,8 @@ import Question from "./Component/Question";
 import NextButton from "./Component/NextButton";
 import Progress from "./Component/Progress";
 import FinishedScreen from "./Component/FinishedScreen";
+import Footer from "./Component/footer";
+import Timer from "./Component/Timer";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -113,12 +115,16 @@ export default function App() {
               answer={answer}
               dispatch={dispatch}
             />
-            <NextButton
-              dispatch={dispatch}
-              answer={answer}
-              index={index}
-              numQuestions={numQuestion}
-            />
+
+            <Footer>
+              <Timer />
+              <NextButton
+                dispatch={dispatch}
+                answer={answer}
+                index={index}
+                numQuestions={numQuestion}
+              />
+            </Footer>
           </>
         )}
         {statuz === "finished" && (
