@@ -17,7 +17,7 @@ Progress.propTypes = {
   index: PropTypes.number.isRequired,
   numQuestion: PropTypes.number.isRequired,
   points: PropTypes.number.isRequired,
-  answer: PropTypes.number.isRequired,
+  answer: PropTypes.number,
   maxPossiblePoints: PropTypes.number.isRequired,
 };
 

@@ -7,5 +7,5 @@ function Footer({ children }) {
 export default Footer;
 
 Footer.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.array,
 };

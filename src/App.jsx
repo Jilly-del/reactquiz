@@ -12,6 +12,7 @@ import FinishedScreen from "./Component/FinishedScreen";
 import Footer from "./Component/footer";
 import Timer from "./Component/Timer";
 
+const SECS_PER_QUESTION = 30;
 function reducer(state, action) {
   switch (action.type) {
     case "dataReceived":
@@ -29,6 +30,7 @@ function reducer(state, action) {
       return {
         ...state,
         statuz: "active",
+        secondsRemaining: state.questions.length * SECS_PER_QUESTION,
       };
     case "newAnswer": {
       const question = state.questions.at(state.index);
@@ -64,6 +66,8 @@ function reducer(state, action) {
       return {
         ...state,
         secondsRemaining: state.secondsRemaining - 1,
+
+        statuz: state.secondsRemaining === 0 ? "finished" : state.statuz,
       };
     default:
       throw new Error("Action unknown");
